@@ -1,0 +1,33 @@
+.deck-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 26px;
+    padding-left: 8px;
+}
+
+.text-layout {
+    display: flex;
+    padding-top: 18px;
+    margin: 0 auto;
+    padding-left: 18px;
+}
+
+.text-button {
+    background: #fffbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.add-button  {
+    width: 36px;
+    height: 32px;
+    left: 1140px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.text-button {
+    border: none;
+}

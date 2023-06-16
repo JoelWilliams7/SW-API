@@ -1,0 +1,21 @@
+.searchbar-container input {
+    width: 352px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 0px 8px;
+    font-size: 16px;
+}
+
+.searchbar-container {
+    position: relative;
+    width: 352px;
+    margin-left: 10px;
+}
+
+.searchbar-container label {
+    position: absolute;
+    right: 8px;
+    top: 25%;
+}

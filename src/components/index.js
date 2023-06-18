@@ -4,4 +4,3 @@ export { default as Home } from "./Home";
 export { default as Searchbar } from "./Searchbar";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export { default as Deck } from "./Deck";
-export { default as Createdeck } from "./Createdeck";

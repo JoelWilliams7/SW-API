@@ -1,6 +1,8 @@
 import "./Card.css";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import { findPerson } from "../../peopleStore";
+import useDeckStore from "../../deckStore";
 import cardIcon from "../../assets/Groupcardicon.svg";
 import plus from "../../assets/Groupplus.svg";
 import male from "../../assets/Groupmale.svg";
@@ -9,10 +11,13 @@ import planet from "../../assets/Groupplanet.svg";
 import vehicle from "../../assets/Groupvehicle.svg";
 import starship from "../../assets/Groupstarship.svg";
 import { useEffect, useState } from "react";
+import { Popover } from "react-tiny-popover";
 
 function Card({ person, isDetail = false }) {
   const location = useLocation();
+  const { addPersonToDeck } = useDeckStore((state) => state);
   const [personToRender, setPersonToRender] = useState(person);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   useEffect(() => {
     if (isDetail) {
@@ -31,10 +36,24 @@ function Card({ person, isDetail = false }) {
     >
       <h2>
         <img src={cardIcon} alt="" />
-        <div>
-          <img src={plus} alt="" />
-        </div>
-        {personToRender?.name}
+
+        <Popover
+          isOpen={isPopoverOpen}
+          positions={["bottom"]}
+          content={
+            <PopoverContent
+              name={personToRender?.name}
+              addPersonToDeck={addPersonToDeck}
+            />
+          }
+        >
+          <button onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
+            <img src={plus} alt="" />
+          </button>
+        </Popover>
+        <Link to={`/${personToRender?.name.replaceAll(" ", "_")}`}>
+          <span>{personToRender?.name}</span>
+        </Link>
       </h2>
       <div className="sub-header">
         <div>
@@ -100,6 +119,35 @@ function Card({ person, isDetail = false }) {
           );
         })
       )}
+    </div>
+  );
+}
+
+function PopoverContent({ name, addPersonToDeck }) {
+  const decks = [
+    "Rebel Alliance Deck",
+    "Jedi Order Deck",
+    "Galactic Empire Deck",
+  ];
+
+  return (
+    <div className="popover-container">
+      <div>Select a deck</div>
+      <ul>
+        {decks.map((deck) => (
+          <li
+            key={deck}
+            onClick={() =>
+              addPersonToDeck(
+                name,
+                deck.toLocaleLowerCase().replaceAll(" ", "-")
+              )
+            }
+          >
+            {deck}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

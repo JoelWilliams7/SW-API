@@ -7,15 +7,15 @@ import "./index.css";
 
 const routes = [
   {
-    path: "/",
+    path: "/SW-API/",
     element: <AllCards />,
   },
   {
-    path: "/:name",
+    path: "/SW-API/:name",
     element: <Card isDetail />,
   },
   {
-    path: "/Deck",
+    path: "/SW-API/Deck",
     element: <Deck />,
   },
 ];

@@ -1,7 +1,6 @@
 import "./AllCards.css";
 import axios from "axios";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import _ from "lodash";
 import { Card, Searchbar } from "../../components";
 import usePeopleStore from "../../peopleStore";
@@ -143,11 +142,7 @@ function AllCards() {
       </div>
       <div className="page-body">
         {peopleDataToRender?.map((person) => {
-          return (
-            <Link key={person.name} to={`/${person.name.replaceAll(" ", "_")}`}>
-              <Card person={person} />
-            </Link>
-          );
+          return <Card key={person.name} person={person} />;
         })}
       </div>
     </div>

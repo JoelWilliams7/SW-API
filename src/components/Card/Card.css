@@ -55,7 +55,6 @@ h2 {
     padding: 12px;
     background-color: #969696;
     height: 98px;
-    color: white;
     margin: 0;
     border-radius: 8px 8px 0 0;
     position: relative;
@@ -66,7 +65,11 @@ h2 img {
     top: 12px;
 }
 
-h2 div {
+h2 span {
+    color: white;
+}
+
+h2 button {
     width: 36px;
    height: 32px;
    background-color: white; 
@@ -82,8 +85,48 @@ a {
     text-decoration: none;
     color: #3B3B3B;
 }
+
+.popover-container {
+    background: #EDEDED;
+    border: 1px solid #B8B8B8;
+    box-shadow: 0px 19px 25px rgba(0, 0, 0, 0.14944), 0px 1.26352px 1.66253px rgba(0, 0, 0, 0.37);
+    border-radius: 4px;
+    width: 216px;
+    height: 171px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popover-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.popover-container div {
+    width: 192px;
+    color: #969696;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    border-bottom: 1px solid #969696;
+    padding-bottom: 5px;
+}
+
+.popover-container ul > li {
+    background: #FFFFFF;
+    border-radius: 2px;
+    width: 192px;
+    height: 26px;
+    padding: 6px 8px;
+    text-align: center;
+    margin: 8px 0;
+    cursor: pointer;
+}
   
-  @media (max-width: 425px){
+@media (max-width: 425px){
     .card-layout{
       width:358px;
     }

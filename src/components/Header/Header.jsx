@@ -11,13 +11,13 @@ function Header() {
     <>
       <div className="header-box">
         <div className="left-buttons">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/SW-API" style={{ textDecoration: "none" }}>
             <button className="all-cards-button">
               <img src={cardicon} alt="" />
               <span>All Cards</span>
             </button>
           </Link>
-          <Link to="/Deck" style={{ textDecoration: "none" }}>
+          <Link to="/SW-API/Deck" style={{ textDecoration: "none" }}>
             <button className="deck-button">
               <img src={decks} alt="" />
               <span>Decks</span>

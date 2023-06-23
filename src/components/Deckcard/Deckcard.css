@@ -1,0 +1,46 @@
+.deck-body {
+    
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 8px;
+    background: #FFF;
+    width: 216px;
+    height: 180px;
+    border-radius: 8px;
+    color:  #FFF;
+}
+
+.deck-body div:last-of-type {
+    color: #3B3B3B;
+    font-size: 48px;
+    font-family: Roboto;
+    font-weight: 300;
+    line-height: 40px;
+    margin: 12px 12px;
+}
+
+.name-of-cards {
+    display: flex;
+    width: 216px;
+    height: 98px;
+    flex-shrink: 0;
+    font-size: 24px;
+    line-height: 24px;
+    background: #8c3131;
+    border-radius: 8px 8px 0 0;
+}
+
+.number-of-cards {
+    display: flex;
+    display: inline-flex;
+    padding: 0px 0px 16px 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 73px;
+    color: #3B3B3B;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 40px;
+    border-radius: 8px;
+    background: #FFF;
+}

@@ -1,0 +1,100 @@
+.deck-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.decks-wrapper {
+    margin: 20px;
+    padding: 0 80px 0 80px;
+}
+
+.deck-layout button {
+    border: none;
+}
+
+.text-layout {
+    display: flex;
+    padding-top: 18px;
+    margin: 0 auto;
+    padding-left: 18px;
+}
+
+.text-button {
+    background: #fffbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.add-button  {
+    width: 36px;
+    height: 32px;
+    left: 1140px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.deck-cards-container {
+    display: flex;
+    gap: 40px;
+    margin: 50px auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.popover-layout {
+    
+    width: 270px;
+    height: 115px;
+    padding: 12px 0px 15px 15px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 33px;
+    flex-shrink: 0;
+    
+    border-radius: 4px;
+    border: 1px solid #B8B8B8;
+    background: #FFF;
+    box-shadow: 0px 1.2635194063186646px 1.6625255346298218px 0px rgba(0, 0, 0, 0.37), 0px 19px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+.popover-layout div {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.popover-layout ul {
+    flex-direction: row;
+    display: flex;
+    cursor: pointer;
+    list-style: none;
+    margin: -18px 4px 30px 50px;
+    padding: 4px;
+    width: 170px;
+    height: 32px;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popover-layout ul li .faction-img {
+    background: #D4D4D4;
+    width: 35px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    block-size: 20px;
+    
+}
+
+.popover-layout input {
+    border: none;
+    border-bottom: 1px solid black
+}
+
+.text-button {
+    border: none;
+}

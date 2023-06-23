@@ -6,7 +6,7 @@ function Breadcrumbs() {
   const location = useLocation();
 
   const isHome = location.pathname === "/";
-  const isDeck = location.pathname.split("/")[1] === "Deck";
+  const isDeck = location.pathname.split("/")[2] === "Deck";
 
   return (
     <div className="breadcrumb">
@@ -20,7 +20,7 @@ function Breadcrumbs() {
       <div className={!isHome ? "breadcrumb-active" : "breadcrumb-not-active"}>
         {isHome || isDeck
           ? `Select a ${isDeck ? "deck" : "card"}`
-          : location.pathname.split("/")[1]}
+          : location.pathname.split("/")[2]}
       </div>
     </div>
   );

@@ -79,6 +79,8 @@ h2 button {
    display: grid;
    place-items: center;
    border-radius: 4px;
+   outline: none;
+   border: none;
 }
 
 a {

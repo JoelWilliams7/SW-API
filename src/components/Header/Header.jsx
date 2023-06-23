@@ -11,7 +11,7 @@ function Header() {
     <>
       <div className="header-box">
         <div className="left-buttons">
-          <Link to="/SW-API" style={{ textDecoration: "none" }}>
+          <Link to="/SW-API/" style={{ textDecoration: "none" }}>
             <button className="all-cards-button">
               <img src={cardicon} alt="" />
               <span>All Cards</span>

@@ -4,16 +4,18 @@ import { persist } from "zustand/middleware";
 const useDeckStore = create(
   persist(
     (set) => ({
-      deckInfo: {
-        "rebel-alliance-deck": [],
-        "jedi-order-deck": [],
-        "galactic-empire-deck": [],
-      },
+      deckInfo: {},
       addPersonToDeck: (name, deck) =>
         set((state) => {
-          const currentStateCopy = { ...state.deckInfo };
-          currentStateCopy[deck].push(name);
-          return currentStateCopy;
+          const deckInfoCopy = structuredClone(state.deckInfo);
+          deckInfoCopy[deck].push(name);
+          return { deckInfo: deckInfoCopy };
+        }),
+      createDeck: (nameOfDeck) =>
+        set((state) => {
+          const deckInfoCopy = structuredClone(state.deckInfo);
+          deckInfoCopy[nameOfDeck] = [];
+          return { deckInfo: deckInfoCopy };
         }),
     }),
     {

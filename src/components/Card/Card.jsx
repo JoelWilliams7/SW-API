@@ -15,9 +15,11 @@ import { Popover } from "react-tiny-popover";
 
 function Card({ person, isDetail = false }) {
   const location = useLocation();
-  const { addPersonToDeck } = useDeckStore((state) => state);
+  const { addPersonToDeck, deckInfo } = useDeckStore((state) => state);
   const [personToRender, setPersonToRender] = useState(person);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+  const deckNames = Object.keys(deckInfo);
 
   useEffect(() => {
     if (isDetail) {
@@ -41,13 +43,21 @@ function Card({ person, isDetail = false }) {
           isOpen={isPopoverOpen}
           positions={["bottom"]}
           content={
-            <PopoverContent
+            <CardPopover
               name={personToRender?.name}
               addPersonToDeck={addPersonToDeck}
+              deckNames={deckNames}
+              closePopover={() => setIsPopoverOpen(false)}
             />
           }
+          onClickOutside={() => setIsPopoverOpen(false)}
         >
-          <button onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
+          <button
+            onClick={() => {
+              if (deckNames.length === 0) return;
+              setIsPopoverOpen(!isPopoverOpen);
+            }}
+          >
             <img src={plus} alt="" />
           </button>
         </Popover>
@@ -123,26 +133,21 @@ function Card({ person, isDetail = false }) {
   );
 }
 
-function PopoverContent({ name, addPersonToDeck }) {
-  const decks = [
-    "Rebel Alliance Deck",
-    "Jedi Order Deck",
-    "Galactic Empire Deck",
-  ];
-
+function CardPopover({ name, addPersonToDeck, deckNames, closePopover }) {
   return (
     <div className="popover-container">
       <div>Select a deck</div>
       <ul>
-        {decks.map((deck) => (
+        {deckNames.map((deck) => (
           <li
             key={deck}
-            onClick={() =>
+            onClick={() => {
               addPersonToDeck(
                 name,
                 deck.toLocaleLowerCase().replaceAll(" ", "-")
-              )
-            }
+              );
+              closePopover();
+            }}
           >
             {deck}
           </li>
